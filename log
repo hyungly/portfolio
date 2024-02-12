@@ -1,0 +1,55 @@
+[33mcommit 2fc46b733807a0bd6bcc6fba7516c97fca5ad51c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Merge: a809ded 5d5860a
+Author: Min Lee <edwardminlee@gmail.com>
+Date:   Mon Feb 12 04:09:52 2024 -0500
+
+    Merge branch 'master' of https://github.com/hyungly/portfolio
+
+[33mcommit a809dedb0bc6e18252a36aac180d088675d5ce7d[m
+Author: Min Lee <edwardminlee@gmail.com>
+Date:   Mon Feb 12 04:09:17 2024 -0500
+
+    database update
+
+[33mcommit 5d5860a84789df2a606c18f670ea637bf83164c1[m
+Author: Min <edwardminlee@gmail.com>
+Date:   Sat Feb 10 19:56:03 2024 -0500
+
+    port address was changed
+
+[33mcommit d436c0060da335de4c573445b7b1ec9ecd288360[m
+Merge: 99e251a 97efd84
+Author: Min <edwardminlee@gmail.com>
+Date:   Sat Feb 10 18:16:13 2024 -0500
+
+    Merge branch 'master' of https://github.com/hyungly/portfolio
+
+[33mcommit 99e251ae763b085f4bc6df378c4827e0c7929109[m
+Author: Min <edwardminlee@gmail.com>
+Date:   Sat Feb 10 18:15:30 2024 -0500
+
+    api url changed
+
+[33mcommit 97efd84077fb67cbfc7804d4e032a5b3a1b1d361[m
+Author: Min Lee <edwardminlee@gmail.com>
+Date:   Fri Feb 9 16:44:51 2024 -0500
+
+    .env 파일을 사용하도록 수정
+
+[33mcommit 482cbb85c7415ef83461c817ad46247c993fb194[m
+Author: Min Lee <edwardminlee@gmail.com>
+Date:   Fri Feb 9 16:22:24 2024 -0500
+
+    api url changed
+
+[33mcommit fb27ca887023014f4cea01257f57582c4eff2984[m
+Author: Min Lee <edwardminlee@gmail.com>
+Date:   Fri Feb 9 12:14:04 2024 -0500
+
+    게시판 포트폴리오 커밋
+
+[33mcommit 49c7b100de72e5eea0d819b94b0be599858e3a77[m
+Author: Min Lee <edwardminlee@gmail.com>
+Date:   Tue Feb 6 22:46:28 2024 -0500
+
+    게시판 포트폴리오 커밋
