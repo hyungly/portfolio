@@ -6,7 +6,7 @@ from starlette.config import Config
 config = Config('.env')
 SQLALCHEMY_DATABASE_URL = config('SQLALCHEMY_DATABASE_URL')
 
-SQLALCHEMY_DATABASE_URL = "sqlite:///./myapi.db"
+SQLALCHEMY_DATABASE_URL = "postgresql://dbmasteruser:nVe]x2N8n:`8[-~XYSB>,Y&,;llMc!}f@ls-2da76f4927b9235df5d34ea96d1b119d481109f1.c9gsms2s25i1.us-east-1.rds.amazonaws.com/fastapi_minboard1"
 
 if SQLALCHEMY_DATABASE_URL.startswith("sqlite"):
     engine = create_engine(
