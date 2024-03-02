@@ -31,7 +31,7 @@
     <div class="row my-3">
         <div class="col-6">
             <a use:link href="/question-create" 
-                class="btn btn-primary {$is_login ? '' : 'disabled'}">질문 등록하기</a>
+                class="btn btn-primary {$is_login ? '' : 'disabled'}">글쓰기</a>
         </div>
         <div class="col-6">
             <div class="input-group">
