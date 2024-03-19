@@ -46,7 +46,9 @@
     <div class="col-6">
       <div class="input-group">
         <input type="text" class="form-control" bind:value="{kw}" on:keydown={(e) => {if (e.key === "Enter") search()}}>
-        <button class="btn btn-outline-secondary" on:click={search}>찾기</button>
+        <button class="btn btn-outline-secondary" on:click={() => {$keyword = kw, $page = 0}}>
+          찾기
+        </button>
       </div>
     </div>
   </div>
