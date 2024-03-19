@@ -3,6 +3,24 @@
     import { page, keyword, access_token, username, is_login } from "../lib/store"
 </script>
 
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+    .navbar-brand, .navbar-nav .nav-link {
+        font-family: "Gugi", sans-serif;
+        font-weight: bold;
+        font-style: normal;
+        font-size: 2rem;
+        /* 추가적으로 원하는 스타일을 지정할 수 있습니다. */
+    }
+    .navbar-nav .nav-link {
+        font-family: "Nanum Gothic", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1rem;
+        /* 추가적으로 원하는 스타일을 지정할 수 있습니다. */
+    }
+</style>
+
 <!-- 네비게이션바 -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
   <div class="container-fluid">
