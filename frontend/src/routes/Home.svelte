@@ -23,6 +23,12 @@
             kw = $keyword
         })
     }
+    
+    function search() {
+    $keyword = kw;
+    $page = 0;
+    // 여기에 실제 검색 로직을 추가할 수 있습니다.
+  }
 
     $:$page, $keyword, get_question_list()
 </script>

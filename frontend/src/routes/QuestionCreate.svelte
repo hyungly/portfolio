@@ -6,17 +6,19 @@
     let error = {detail:[]}
     let subject = ''
     let content = ''
-    let photo = null
 
     function post_question(event) {
         event.preventDefault()
-        
+        //다음 항목을 추가
         let formData = new FormData()
         formData.append('subject', subject)
         formData.append('content', content)
-        formData.append('photo', photo) // 첨부된 사진 추가
-
+        //#1
         let url = "/api/question/create"
+        let params = {
+            subject: subject,
+            content: content,
+        }
 
         fastapi('post', url, params, 
             (json) => {
@@ -27,11 +29,14 @@
             }
         )
     }
+
+    //다음 항목을 추가
     function handlePaste(event) {
         const paste = (event.clipboardData || window.clipboardData).getData('text')
-        
+
         content += paste
     }
+    //#2
 </script>
 
 <div class="container">
