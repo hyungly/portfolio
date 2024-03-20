@@ -1,3 +1,4 @@
+User
 <script>
   import { push } from 'svelte-spa-router'
   import fastapi from "../lib/api"
@@ -6,28 +7,15 @@
   let error = {detail:[]}
   let subject = ''
   let content = ''
-  let imageFile = null
-
-  function handleImageUpload(event) {
-      const file = event.target.files[0]
-      imageFile = file
-  }
 
   function post_question(event) {
       event.preventDefault()
-
       let url = "/api/question/create"
       let params = {
           subject: subject,
           content: content,
       }
-
-      let formData = new FormData()
-      if (imageFile) {
-          formData.append('image', imageFile)
-      }
-
-      fastapi('post', url, formData, 
+      fastapi('post', url, params, 
           (json) => {
               push("/")
           },
@@ -49,10 +37,6 @@
       <div class="mb-3">
           <label for="content">내용</label>
           <textarea class="form-control" rows="10" bind:value="{content}"></textarea>
-      </div>
-      <div class="mb-3">
-          <label for="imageUpload">이미지 첨부</label>
-          <input type="file" id="imageUpload" accept="image/*" on:change={handleImageUpload}>
       </div>
       <button class="btn btn-primary" on:click="{post_question}">작성하기</button>
   </form>
