@@ -16,14 +16,18 @@
   function post_question(event) {
       event.preventDefault()
 
+      let url = "/api/question/create"
+      let params = {
+          subject: subject,
+          content: content,
+      }
+
       let formData = new FormData()
       formData.append('subject', subject)
       formData.append('content', content)
       if (imageFile) {
           formData.append('image', imageFile)
       }
-
-      let url = "/api/question/create"
 
       fastapi('post', url, formData, 
           (json) => {
