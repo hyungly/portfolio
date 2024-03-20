@@ -10,7 +10,7 @@
   let total = 0
   let kw = ''
   let currentPage = 0
-  $: total_page = Math.ceil(total / size)
+  $: total_page = Math.ceil(total/size)
 
   function get_question_list() {
     let params = {
@@ -31,6 +31,8 @@
   }
 
   function search() {
+    $keyword = kw;
+    $page = 0;
     currentPage = 0
     get_question_list()
   }
