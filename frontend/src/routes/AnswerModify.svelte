@@ -34,7 +34,7 @@
 </script>
 
 <div class="container">
-  <h5 class="my-3 border-bottom pb-2">답변 수정</h5>
+  <h5 class="my-3 border-bottom pb-2">댓글 수정</h5>
   <Error error={error} />
   <form method="post" class="my-3">
       <div class="mb-3">

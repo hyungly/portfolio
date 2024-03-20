@@ -109,7 +109,7 @@
 </script>
 
 <div class="container my-3">
-  <!-- 질문 -->
+  <!-- 게시글 -->
   <h2 class="border-bottom py-2">{question.subject}</h2>
   <div class="card my-3">
       <div class="card-body">
@@ -148,8 +148,8 @@
       push('/')
   }}">목록으로</button>
 
-  <!-- 답변 목록 -->
-  <h5 class="border-bottom my-3 py-2">{question.answers.length}개의 답변이 있습니다.</h5>
+  <!-- 댓글 목록 -->
+  <h5 class="border-bottom my-3 py-2">{question.answers.length}개의 댓글이 있습니다.</h5>
   {#each question.answers as answer}
   <div class="card my-3">
       <div class="card-body">
@@ -184,7 +184,7 @@
       </div>    
   </div>
   {/each}
-  <!-- 답변 등록 -->
+  <!-- 댓글 등록 -->
   <Error error={error} />
   <form method="post" class="my-3">
       <div class="mb-3">
@@ -192,7 +192,7 @@
           disabled={$is_login ? "" : "disabled"}
           class="form-control" />
       </div>
-      <input type="submit" value="답변등록" class="btn btn-primary {$is_login ? '' : 'disabled'}" 
+      <input type="submit" value="댓글등록" class="btn btn-primary {$is_login ? '' : 'disabled'}" 
         on:click="{post_answer}" />
   </form>
 </div>
