@@ -51,6 +51,10 @@
             <label for="content">내용</label>
             <textarea class="form-control" rows="10" bind:value="{content}"></textarea>
         </div>
-        <button class="btn btn-primary" on:click="{post_question}">작성하기</button>
+        <div class="mb-3">
+          <label for="image">이미지 첨부</label>
+            <input type="file" class="form-control" id="image" on:change={handlePaste}>
+        </div>
+        <button class="btn btn-primary" on:click="{post_question}">작성완료</button>
     </form>
 </div>
