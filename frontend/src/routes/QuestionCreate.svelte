@@ -23,8 +23,6 @@
       }
 
       let formData = new FormData()
-      formData.append('subject', subject)
-      formData.append('content', content)
       if (imageFile) {
           formData.append('image', imageFile)
       }
