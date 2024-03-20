@@ -8,7 +8,12 @@
   let content = ''
   let imageFile = null
 
-  async function post_question(event) {
+  function handleImageUpload(event) {
+      const file = event.target.files[0]
+      imageFile = file
+  }
+
+  function post_question(event) {
       event.preventDefault()
 
       let formData = new FormData()
@@ -18,25 +23,16 @@
           formData.append('image', imageFile)
       }
 
-      try {
-          const response = await fetch('/api/question/create', {
-              method: 'POST',
-              body: formData
-          })
+      let url = "/api/question/create"
 
-          if (response.ok) {
+      fastapi('post', url, formData, 
+          (json) => {
               push("/")
-          } else {
-              const json_error = await response.json()
+          },
+          (json_error) => {
               error = json_error
           }
-      } catch (error) {
-          console.error('Error:', error)
-      }
-  }
-  function handleImageUpload(event) {
-      const file = event.target.files[0]
-      imageFile = file
+      )
   }
 </script>
 
