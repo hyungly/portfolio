@@ -57,3 +57,12 @@ def delete_question(db: Session, db_question: Question):
 def vote_question(db: Session, db_question: Question, db_user: User):
     db_question.voter.append(db_user)
     db.commit()
+
+def create_question(db: Session, question_create: QuestionCreate, user: User, image: str):
+    db_question = Question(subject=question_create.subject,
+                           content=question_create.content,
+                           create_date=datetime.now(),
+                           user=user,
+                           image=image)  # 이미지 파일의 경로를 저장하는 필드 추가
+    db.add(db_question)
+    db.commit()
