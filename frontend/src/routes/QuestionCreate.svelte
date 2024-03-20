@@ -6,14 +6,18 @@
     let error = {detail:[]}
     let subject = ''
     let content = ''
+    let photo = null
 
     function post_question(event) {
         event.preventDefault()
+        
+        let formData = new FormData()
+        formData.append('subject', subject)
+        formData.append('content', content)
+        formData.append('photo', photo) // 첨부된 사진 추가
+
         let url = "/api/question/create"
-        let params = {
-            subject: subject,
-            content: content,
-        }
+
         fastapi('post', url, params, 
             (json) => {
                 push("/")
@@ -22,6 +26,11 @@
                 error = json_error
             }
         )
+    }
+    function handlePaste(event) {
+        const paste = (event.clipboardData || window.clipboardData).getData('text')
+        
+        content += paste
     }
 </script>
 
@@ -37,6 +46,6 @@
             <label for="content">내용</label>
             <textarea class="form-control" rows="10" bind:value="{content}"></textarea>
         </div>
-        <button class="btn btn-primary" on:click="{post_question}">저장하기</button>
+        <button class="btn btn-primary" on:click="{post_question}">작성하기</button>
     </form>
 </div>
