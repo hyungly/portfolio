@@ -6,7 +6,11 @@
   let error = {detail:[]}
   let subject = ''
   let content = ''
-  let imageFile = null
+
+  function handleImageUpload(event) {
+      const file = event.target.files[0]
+      imageFile = file
+  }
 
   async function post_question(event) {
       event.preventDefault()
@@ -14,9 +18,7 @@
       let formData = new FormData()
       formData.append('subject', subject)
       formData.append('content', content)
-      if (imageFile) {
-          formData.append('image', imageFile)
-      }
+      formData.append('image', imageFile)
 
       try {
           const response = await fetch('/api/question/create', {
@@ -33,10 +35,6 @@
       } catch (error) {
           console.error('Error:', error)
       }
-  }
-  function handleImageUpload(event) {
-      const file = event.target.files[0]
-      imageFile = file
   }
 </script>
 
