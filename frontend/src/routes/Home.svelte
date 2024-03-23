@@ -41,14 +41,18 @@
     <div class="row my-3">
         <div class="col-6">
             <a use:link href="/question-create" 
-                class="btn btn-primary {$is_login ? '' : 'disabled'}">글쓰기</a>
+                class="btn btn-primary {$is_login ? '' : 'disabled'}"
+                on:mouseenter={handleMouseenter}
+                on:mouseleave={handleMouseleave}
+                class:curious={hereKitty}
+                >글쓰기</a>
             <img
                 class:curious={hereKitty}
                 alt="Kitten wants to know what's going on"
                 src="/kitten.png"
                 on:mouseenter={handleMouseenter}
                 on:mouseleave={handleMouseleave}
-              />
+            />
               
             <style>
                 img {
