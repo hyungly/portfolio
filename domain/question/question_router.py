@@ -11,7 +11,6 @@ router = APIRouter(
     prefix="/api/question",
 )
 
-MAX_FILE_SIZE_MB = 20  # 최대 파일 크기 (MB)
 
 @router.get("/list", response_model=question_schema.QuestionList)
 def question_list(db: Session = Depends(get_db),
@@ -76,12 +75,3 @@ def question_vote(_question_vote: question_schema.QuestionVote,
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,
                             detail="데이터를 찾을수 없습니다.")
     question_crud.vote_question(db, db_question=db_question, db_user=current_user)
-
-@router.post("/upload-image/", status_code=status.HTTP_201_CREATED)
-def upload_image(db: Session = Depends(get_db),
-                 current_user: User = Depends(get_current_user),
-                 image: UploadFile = File(...)):
-    if image.content_length > MAX_FILE_SIZE_MB * 1024 * 1024:
-        raise HTTPException(status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE, detail="파일 크기가 너무 큽니다")
-
-    return {"image_filename": image.filename}
