@@ -103,7 +103,7 @@
 <img
   class:curious={hereKitty}
   alt="Kitten wants to know what's going on"
-  src="src\routes\kitten.png"
+  src="kitten.png"
   style="width: 15%;"
 />
 
