@@ -45,7 +45,7 @@
             <img
                 class:curious={hereKitty}
                 alt="Kitten wants to know what's going on"
-                src="kitten.png"
+                src="/kitten.png"
                 on:mouseenter={handleMouseenter}
                 on:mouseleave={handleMouseleave}
               />
