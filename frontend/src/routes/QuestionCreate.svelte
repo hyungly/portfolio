@@ -1,4 +1,3 @@
-User
 <script>
   import { push } from 'svelte-spa-router'
   import fastapi from "../lib/api"
@@ -9,21 +8,21 @@ User
   let content = ''
 
   function post_question(event) {
-        event.preventDefault()
-        let url = "/api/question/create"
-        let params = {
-            subject: subject,
-            content: content,
-        }
-        fastapi('post', url, params, 
-            (json) => {
-                push("/")
-            },
-            (json_error) => {
-                error = json_error
-            }
-        )
-    }
+      event.preventDefault()
+      let url = "/api/question/create"
+      let params = {
+          subject: subject,
+          content: content,
+      }
+      fastapi('post', url, params, 
+          (json) => {
+              push("/")
+          },
+          (json_error) => {
+              error = json_error
+          }
+      )
+  }
 </script>
 
 <div class="container">
