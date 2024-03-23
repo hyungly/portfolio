@@ -5,32 +5,38 @@
   import moment from 'moment/min/moment-with-locales'
   moment.locale('ko')
 
+  let hereKitty = false;
+
+  const handleMouseenter = () => (hereKitty = true);
+  const handleMouseleave = () => (hereKitty = false);
+
   let question_list = []
   let size = 10
   let total = 0
   let kw = ''
   $: total_page = Math.ceil(total/size)
 
-    function get_question_list() {
-        let params = {
-            page: $page,
-            size: size,
-            keyword: $keyword,
-        }
-        fastapi('get', '/api/question/list', params, (json) => {
-            question_list = json.question_list
-            total = json.total
-            kw = $keyword
-        })
-    }
-    
-    function search() {
+  function get_question_list() {
+      let params = {
+          page: $page,
+          size: size,
+          keyword: $keyword,
+      }
+      fastapi('get', '/api/question/list', params, (json) => {
+          question_list = json.question_list
+          total = json.total
+          kw = $keyword
+      })
+  }
+  
+  function search() {
     $keyword = kw;
     $page = 0;
-    // 여기에 실제 검색 로직을 추가할 수 있습니다.
   }
-    $:$page, $keyword, get_question_list()
+  $: $page, $keyword, get_question_list()
 </script>
+
+<svelte:body on:mouseenter={handleMouseenter} on:mouseleave={handleMouseleave} />
 
 <div class="container my-3">
     <div class="row my-3">
@@ -93,3 +99,29 @@
   </ul>
   <!-- 페이징처리 끝 -->
 </div>
+
+<img
+  class:curious={hereKitty}
+  alt="Kitten wants to know what's going on"
+  src="src\routes\kitten.png"
+  style="width: 15%;"
+/>
+
+<style>
+  img {
+      position: absolute;
+      left: 0;
+      bottom: -60px;
+      transform: translate(-80%, 0) rotate(-30deg);
+      transform-origin: 100% 100%;
+      transition: transform 0.4s;
+  } 
+
+  .curious {
+      transform: translate(-15%, 0) rotate(0deg);
+  }
+
+  :global(body) {
+      overflow: hidden;
+  }
+</style>
