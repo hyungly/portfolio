@@ -29,49 +29,14 @@
     $page = 0;
     // 여기에 실제 검색 로직을 추가할 수 있습니다.
   }
-
     $:$page, $keyword, get_question_list()
-  let hereKitty = false;
-
-  const handleMouseenter = () => (hereKitty = true);
-  const handleMouseleave = () => (hereKitty = false);
 </script>
 
 <div class="container my-3">
     <div class="row my-3">
         <div class="col-6">
             <a use:link href="/question-create" 
-                class="btn btn-primary {$is_login ? '' : 'disabled'}"
-                on:mouseenter={handleMouseenter}
-                on:mouseleave={handleMouseleave}
-                class:curious={hereKitty}
-                >글쓰기</a>
-            <img
-                class:curious={hereKitty}
-                alt="Kitten wants to know what's going on"
-                src="/kitten.png"
-                on:mouseenter={handleMouseenter}
-                on:mouseleave={handleMouseleave}
-            />
-              
-            <style>
-                img {
-                  position: absolute;
-                  left: 0;
-                  bottom: -60px;
-                  transform: translate(-80%, 0) rotate(-30deg);
-                  transform-origin: 100% 100%;
-                  transition: transform 0.4s;
-                }
-              
-                .curious {
-                  transform: translate(-15%, 0) rotate(0deg);
-                }
-              
-                :global(body) {
-                  overflow: hidden;
-                }
-            </style>
+                class="btn btn-primary {$is_login ? '' : 'disabled'}">글쓰기</a>
         </div>
         <div class="col-6">
             <div class="input-group">
