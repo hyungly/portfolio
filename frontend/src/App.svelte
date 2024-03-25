@@ -23,12 +23,16 @@
   }
 </script>
 
-<button on:click={() => (showModal = true)}>Show Modal</button>
+<button class="show-modal" on:click={() => (showModal = true)}>환영글 보기</button>
 {#if showModal}
 	<div class="box" use:clickOutside on:outclick={() => (showModal = false)}>Minboard 방문을 환영합니다!</div>
 {/if}
 
 <style>
+  .show-modal {
+    position: fixed;
+    top: 0;
+  }
 	.box {
 		--width: 225px;
 		--height: 45px;
