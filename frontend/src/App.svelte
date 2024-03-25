@@ -31,7 +31,7 @@
 <img
   class:curious={hereKitty}
   alt="Kitten wants to know what's going on"
-  src="https://www.pngall.com/wp-content/uploads/2016/05/Kitten-Free-PNG-Image.png"
+  src="src\routes\image\kitten.png"
   style="width: 15%;"
 />
 
