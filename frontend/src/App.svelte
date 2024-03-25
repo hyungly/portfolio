@@ -34,7 +34,7 @@
     top: 0;
   }
 	.box {
-		--width: 225px;
+		--width: 238px;
 		--height: 45px;
 		position: absolute;
 		width: var(--width);
