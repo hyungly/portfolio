@@ -106,13 +106,6 @@
             )
         }
     }
-    
-    function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-    }
 </script>
 
 <div class="container my-3">
@@ -191,12 +184,6 @@
       </div>    
   </div>
   {/each}
-
-  <div class="scroll-navigation">
-    <button onclick="scrollToSection('post')">게시글</button>
-    <button onclick="scrollToSection('comments')">댓글 목록</button>
-  </div>
-
   <!-- 댓글 등록 -->
   <Error error={error} />
   <form method="post" class="my-3">
